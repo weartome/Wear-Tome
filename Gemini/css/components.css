@@ -150,6 +150,29 @@ body.hero-logo-hidden #main-header.menu-open #nav-logo-container img {
     @apply space-y-3;
 }
 
+/* ===== NEW: Mobile Navigation ===== */
+.mobile-nav-link {
+    @apply block py-4 text-2xl font-semibold text-center transition-colors duration-300 hover:bg-light;
+}
+
+.hamburger-icon {
+    @apply space-y-2;
+}
+.hamburger-icon .line {
+    @apply block w-8 h-0.5 bg-primary transition-transform duration-300 ease-in-out;
+}
+
+/* Hamburger to 'X' transition */
+.mobile-menu-open .hamburger-icon .line-1 {
+    @apply translate-y-[10px] rotate-45;
+}
+.mobile-menu-open .hamburger-icon .line-2 {
+    @apply opacity-0;
+}
+.mobile-menu-open .hamburger-icon .line-3 {
+    @apply -translate-y-[10px] -rotate-45;
+}
+
 
 /* ===== Luxury Product Card Hover Effect ===== */
 .product-card .product-image {

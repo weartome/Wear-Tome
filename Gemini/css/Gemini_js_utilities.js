@@ -149,21 +149,24 @@ const LuxuryUtils = {
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const header = document.getElementById('main-header');
-        const body = document.body; // Get the body element
 
-        if (!hamburgerBtn || !mobileMenu || !header) return;
+        if (!hamburgerBtn || !mobileMenu) return;
 
         hamburgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            const isMenuOpen = !mobileMenu.classList.contains('hidden');
-            hamburgerBtn.setAttribute('aria-expanded', isMenuOpen);
-            header.classList.toggle('mobile-menu-open', isMenuOpen);
+            const isOpen = mobileMenu.classList.toggle('hidden');
+            hamburgerBtn.setAttribute('aria-expanded', String(!isOpen));
 
-            if (isMenuOpen) {
+            // Use a class on the header to show the 'X' icon and white background
+            header.classList.toggle('mobile-menu-open');
+
+            // Prevent body scroll when menu is open
+            if (!isOpen) {
                 // Menu is open
+                header.classList.add('mobile-menu-open');
                 body.style.overflow = 'hidden'; // Prevent scrolling
             } else {
                 // Menu is closed
+                header.classList.remove('mobile-menu-open');
                 body.style.overflow = ''; // Restore scrolling
             }
         });
