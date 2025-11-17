@@ -81,7 +81,7 @@
                 <h1 class="font-serif text-6xl font-bold">Create Account</h1>
                 <p class="mt-2 text-zinc-600">Join the WEAR TOME club for exclusive access.</p>
 
-                <form action="#" method="POST" class="space-y-6 mt-12 text-left">
+                <form id="signup-form" class="space-y-6 mt-12 text-left">
                     <div>
                         <label for="name" class="sr-only">Full Name</label>
                         <input type="text" name="name" id="name" placeholder="Full Name" class="contact-input">
@@ -207,12 +207,38 @@
     <script src="js/utilities.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/sliders.js"></script>
+    <script type="module" src="js/firebase-init.js"></script>
     
     <!-- Initialize scripts -->
-    <script>
+    <script type="module">
+        import { auth } from './js/firebase-init.js';
+        import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
         document.addEventListener('DOMContentLoaded', () => {
             LuxuryUtils.init();
             ScrollAnimations.init();
+
+            const signupForm = document.getElementById('signup-form');
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const email = signupForm.email.value;
+                const password = signupForm.password.value;
+
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        // Signed in 
+                        const user = userCredential.user;
+                        console.log('User created:', user);
+                        window.location.href = 'login.html';
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.error('Signup error:', errorCode, errorMessage);
+                        alert(`Error: ${errorMessage}`);
+                    });
+            });
         });
     </script>
 </body>
