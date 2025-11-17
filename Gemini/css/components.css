@@ -1,0 +1,292 @@
+/*
+ * components.css
+ *
+ * Contains custom CSS that complements Tailwind.
+ * - Animation keyframes & definitions
+ * - Custom hover effects (neon glow)
+ * - Luxury UI components (scrollbar, abstract shapes)
+ */
+
+/* ===== Root Variables ===== */
+:root {
+    /* Easing variable for JS and CSS */
+    --ease-lux: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* ===== Custom Scrollbar (Luxury Touch) ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 4px;
+}
+
+/* ===== NEW LOGO ANIMATION (Simple Scroll) ===== */
+.smooth {
+    transition: all .65s cubic-bezier(.25,.1,.25,1);
+}
+
+#heroLogo {
+    transform-origin: center;
+}
+
+#navLogo {
+    transform-origin: center;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/* ===== HEADER STYLING (Keeps other pages working) ===== */
+
+/* Default state for header (transparent on top, white logo) */
+#main-header {
+     @apply text-secondary; /* White text */
+}
+#main-header #navLogo {
+    filter: brightness(0) invert(1); /* Make logo white */
+}
+
+/* Scrolled state for all pages */
+body.scrolled-past-hero #main-header {
+    @apply bg-white shadow-lg text-primary; /* White bg, black text */
+}
+body.scrolled-past-hero #main-header #navLogo {
+     filter: none; /* Make logo black */
+}
+body.scrolled-past-hero #main-header .nav-link-hover {
+    @apply text-primary; /* Make links black */
+}
+
+/* Handle Mega Menu Opening */
+body.hero-logo-hidden #main-header.menu-open {
+    @apply bg-white text-primary; /* On scroll, if menu opens, it becomes white */
+}
+body.hero-logo-hidden #main-header.menu-open #nav-logo-container img {
+    filter: invert(1); /* Makes the white logo black */
+}
+/* Screen-reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Handle Mega Menu Opening */
+body.hero-logo-hidden #main-header.menu-open {
+    @apply bg-white text-primary; /* On scroll, if menu opens, it becomes white */
+}
+body.hero-logo-hidden #main-header.menu-open #nav-logo-container img {
+    filter: invert(1); /* Makes the white logo black */
+}
+
+/* NEW: Mobile Menu Open State */
+#main-header.mobile-menu-open {
+    @apply bg-white text-primary;
+}
+
+#main-header.mobile-menu-open #navLogo {
+    filter: none; /* Black logo */
+}
+/* ===== General Component Styling ===== */
+.nav-link-hover {
+    @apply relative transition-colors duration-300 hover:text-accent; /* Is class mein koi badlav nahi kiya gaya hai */
+}
+.nav-link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent, #9DFF00);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease-lux);
+}
+.nav-link-hover:hover::after {
+    transform: scaleX(1);
+}
+
+/* Button Styles */
+.btn-primary {
+    @apply inline-block bg-primary text-secondary px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-secondary hover:text-primary hover:shadow-[inset_0_0_0_2px_#000000];
+}
+.btn-secondary {
+    @apply inline-block bg-secondary text-primary px-8 py-4 text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:bg-primary hover:text-secondary hover:shadow-[inset_0_0_0_2px_#ffffff];
+}
+
+/* Slider Button Styles */
+.slider-btn {
+    @apply h-14 w-14 border border-zinc-300 bg-white transition-all duration-300 hover:bg-primary hover:text-secondary;
+}
+.slider-btn.disabled {
+    @apply opacity-30 cursor-not-allowed;
+}
+
+/* Footer Links */
+.footer-link {
+    @apply text-zinc-400 transition-colors duration-300 hover:text-white hover:underline;
+}
+.social-link {
+    @apply text-zinc-400 transition-colors duration-300 hover:text-white;
+}
+
+/* NEW: Footer Heading & List Styling */
+.footer-heading {
+    @apply mb-4 text-sm font-bold uppercase tracking-widest text-white;
+}
+
+.footer-list {
+    @apply space-y-3;
+}
+
+
+/* ===== Luxury Product Card Hover Effect ===== */
+.product-card .product-image {
+    @apply h-full w-full object-cover transition-transform duration-700 ease-lux-ease;
+}
+.product-card:hover .product-image {
+    @apply scale-110;
+}
+
+/* Neon Accent Highlight */
+.product-card .neon-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, #9DFF00 0%, transparent 70%);
+    filter: blur(40px);
+    opacity: 0;
+    transition: opacity 0.7s var(--ease-lux);
+    z-index: -1;
+}
+.product-card:hover .neon-highlight {
+    opacity: 0.15;
+}
+
+/* ===== Instagram Grid Hover ===== */
+.insta-image {
+    @apply h-full w-full object-cover transition-all duration-500 ease-lux-ease grayscale;
+}
+.insta-image:hover {
+    @apply scale-110 grayscale-0;
+}
+
+/* ===== Abstract Shapes & Animations ===== */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes scroller-pulse {
+    0%, 100% { height: 0; transform: translateY(0); }
+    50% { height: 40px; }
+    100% { transform: translateY(64px); }
+}
+
+.scroller-line {
+    display: block;
+    width: 1px;
+    background-color: white;
+    animation: scroller-pulse 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+.abstract-shape {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: #9DFF00;
+    opacity: 0.1;
+    filter: blur(100px);
+    border-radius: 50%;
+    animation: float 12s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* ===== SCROLL REVEAL ANIMATION DEFINITIONS ===== */
+
+/* Base state for all animated elements */
+[data-animate] {
+    opacity: 0;
+    transition: all 1.2s var(--ease-lux);
+}
+
+/* Fade Up */
+[data-animate="fade-up"] {
+    transform: translateY(80px);
+}
+[data-animate="fade-up"].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade Left */
+[data-animate="fade-left"] {
+    transform: translateX(-100px);
+}
+[data-animate="fade-left"].is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade Right */
+[data-animate="fade-right"] {
+    transform: translateX(100px);
+}
+[data-animate="fade-right"].is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Zoom In */
+[data-animate="zoom-in"] {
+    transform: scale(0.8);
+}
+[data-animate="zoom-in"].is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== Lazy Loading States ===== */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+img.lazy-loaded {
+    opacity: 1;
+}
+
+/* ===== Product Page Specifics ===== */
+
+/* Image Zoom Feature */
+.image-zoom-container {
+    position: relative;
+    cursor: crosshair;
+}
+
+.zoom-result {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    background-repeat: no-repeat;
+    display: none;
+    z-index: 100;
+    pointer-events: none; /* Make sure it doesn't interfere with mouse events */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translate(-50%, -50%); /* Center on cursor */
+}

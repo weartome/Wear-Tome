@@ -1,0 +1,16 @@
+User-agent: *
+
+# Disallow crawling of user-specific and non-public pages
+Disallow: /404.html
+Disallow: /cart.html
+Disallow: /checkout.html
+Disallow: /login.html
+Disallow: /order-track.html
+Disallow: /profile.html
+Disallow: /signup.html
+
+# Allow all other content
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.weartome.com/sitemap.xml

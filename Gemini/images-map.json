@@ -1,0 +1,194 @@
+[
+  {
+    "file": "wear_tome_logo.svg",
+    "role": "logo-nav",
+    "alt": "WEAR TOME Logo",
+    "responsive": []
+  },
+  {
+    "file": "wear_tome_logo.svg",
+    "role": "logo-hero",
+    "alt": "WEAR TOME Logo",
+    "responsive": []
+  },
+  {
+    "file": "hero-model.jpg",
+    "role": "hero",
+    "alt": "Wear Tome hero model",
+    "responsive": [
+      "images/hero-model.jpg",
+      "images/hero-model.jpg",
+      "images/hero-model.jpg"
+    ],
+    "notes": "Resizing recommended for production (600w, 1200w, 1800w)."
+  },
+  {
+    "file": "promo-banner.jpg",
+    "role": "banner-1",
+    "alt": "Wear Tome promotional banner",
+    "responsive": [],
+    "notes": "Resizing recommended for production."
+  },
+  {
+    "file": "shop-hero.jpg",
+    "role": "banner-2",
+    "alt": "Wear Tome shop hero banner",
+    "responsive": [],
+    "notes": "Resizing recommended for production."
+  },
+  {
+    "file": "about-hero.jpg",
+    "role": "banner-3",
+    "alt": "About WEAR TOME",
+    "responsive": [],
+    "notes": "Resizing recommended for production."
+  },
+  {
+    "file": "blog-hero.jpg",
+    "role": "banner-4",
+    "alt": "WEAR TOME Blog",
+    "responsive": [],
+    "notes": "Resizing recommended for production."
+  },
+  {
+    "file": "sustainability-hero.jpg",
+    "role": "banner-5",
+    "alt": "WEAR TOME Sustainability",
+    "responsive": [],
+    "notes": "Resizing recommended for production."
+  },
+  {
+    "file": "sustainability-materials.jpg",
+    "role": "banner-6",
+    "alt": "Sustainable materials",
+    "responsive": [],
+    "notes": "Resizing recommended for production."
+  },
+  {
+    "file": "sustainability-ethics.jpg",
+    "role": "banner-7",
+    "alt": "Ethical production",
+    "responsive": [],
+    "notes": "Resizing recommended for production."
+  },
+  {
+    "file": "product1.jpg",
+    "role": "product-unisex-1",
+    "alt": "Wear Tome unisex product - Tech-Weave Cargo Pant",
+    "responsive": []
+  },
+  {
+    "file": "product2.jpg",
+    "role": "product-unisex-2",
+    "alt": "Wear Tome unisex product - Oversized 'Icon' Hoodie",
+    "responsive": []
+  },
+  {
+    "file": "product3.jpg",
+    "role": "product-unisex-3",
+    "alt": "Wear Tome unisex product - Abstract Graphic Tee",
+    "responsive": []
+  },
+  {
+    "file": "product4.jpg",
+    "role": "product-unisex-4",
+    "alt": "Wear Tome unisex product - 'Aether' Utility Jacket",
+    "responsive": []
+  },
+  {
+    "file": "product5.jpg",
+    "role": "product-unisex-5",
+    "alt": "Wear Tome unisex product - 'Void' Black Denim",
+    "responsive": []
+  },
+  {
+    "file": "product6.jpg",
+    "role": "product-unisex-6",
+    "alt": "Wear Tome unisex product - 'Origin' Knit Sweater",
+    "responsive": []
+  },
+  {
+    "file": "product7.jpg",
+    "role": "product-unisex-7",
+    "alt": "Wear Tome unisex product - Reflective Windbreaker",
+    "responsive": []
+  },
+  {
+    "file": "insta1.jpg",
+    "role": "insta-1",
+    "alt": "Instagram post 1 from Wear Tome",
+    "responsive": []
+  },
+  {
+    "file": "insta2.jpg",
+    "role": "insta-2",
+    "alt": "Instagram post 2 from Wear Tome",
+    "responsive": []
+  },
+  {
+    "file": "insta3.jpg",
+    "role": "insta-3",
+    "alt": "Instagram post 3 from Wear Tome",
+    "responsive": []
+  },
+  {
+    "file": "insta4.jpg",
+    "role": "insta-4",
+    "alt": "Instagram post 4 from Wear Tome",
+    "responsive": []
+  },
+  {
+    "file": "insta5.jpg",
+    "role": "insta-5",
+    "alt": "Instagram post 5 from Wear Tome",
+    "responsive": []
+  },
+  {
+    "file": "insta6.jpg",
+    "role": "insta-6",
+    "alt": "Instagram post 6 from Wear Tome",
+    "responsive": []
+  },
+  {
+    "file": "team1.jpg",
+    "role": "team-1",
+    "alt": "Wear Tome team member Alex Thorne",
+    "responsive": []
+  },
+  {
+    "file": "team2.jpg",
+    "role": "team-2",
+    "alt": "Wear Tome team member Jasmine Kaur",
+    "responsive": []
+  },
+  {
+    "file": "team3.jpg",
+    "role": "team-3",
+    "alt": "Wear Tome team member Leo Chen",
+    "responsive": []
+  },
+  {
+    "file": "team4.jpg",
+    "role": "team-4",
+    "alt": "Wear Tome team member Sofia Rossi",
+    "responsive": []
+  },
+  {
+    "file": "blog1.jpg",
+    "role": "misc-1",
+    "alt": "Blog post image - The Art of Layering",
+    "responsive": []
+  },
+  {
+    "file": "blog2.jpg",
+    "role": "misc-2",
+    "alt": "Blog post image - Designer Interview",
+    "responsive": []
+  },
+  {
+    "file": "blog3.jpg",
+    "role": "misc-3",
+    "alt": "Blog post image - Sustainable Tech Fabrics",
+    "responsive": []
+  }
+]
